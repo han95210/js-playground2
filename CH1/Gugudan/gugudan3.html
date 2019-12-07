@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>6,7,8,9단 구구단 구현</title>
+</head>
+
+<body>
+    <h1>6,7,8,9단 구구단 구현</h1>
+    <script>
+        while (true) {
+            var num = Number(prompt("2이상 9이하의 숫자를 입력하세요.(구구단 출력)"));
+            if (num < 2 || num > 9) {
+                alert("다시 입력하세요!");
+            } else {
+                break;
+            }
+        }
+        
+        document.write("<h2>" + num + "단 출력</h2>");
+        for (var i = 1; i < 10; i++) {
+            document.write(num + " * " + i + " = " + (num * i) + "<br>");
+            console.log(num + " * " + i + " = " + (num * i));
+        }   
+    </script>
+</body>
+
+</html>
