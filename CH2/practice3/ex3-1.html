@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>소수 출력하기</title>
+</head>
+
+<body>
+    <h1>1~10000 사이 소수 화면에 출력하기</h1>
+    <script>
+        numbers = {};
+        numbers.all = [];
+        numbers.prime = [];
+        numbers.isPrime = function (number) {
+            var i = 2;
+            while (number != i) {
+                if (number % i === 0) {
+                    //소수가 아님
+                    break;
+                } else {
+                    i++;
+                }
+            }
+            if (number === i) {
+                return number;
+            }
+        }
+
+        numbers.addPrime = function (number) {
+            for (var i = 2; i < number; i++) {
+                var num = numbers.isPrime(i);
+                if (typeof(num) === 'undefined') {
+                    continue;
+                } else {
+                    this.prime.push(num);
+                }
+            }
+        }
+        numbers.getAllPrimes = function () {
+            this.addPrime(10000);
+            document.write("<h3>1~10000 사이의 소수의 총 갯수는 " + this.prime.length + "입니다.</h3>");
+            for (var i = 0; i < this.prime.length; i++) {
+                document.write(this.prime[i] + "   ");
+            }
+        }
+        numbers.getAllPrimes();
+    </script>
+
+</body>
+
+</html>
