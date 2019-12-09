@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script type='text/javascript'>
+
+        document.write('<div style="font: 12pt DotumChe">');
+        document.write('<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [ 구구단 ]<br />');
+
+        for (var j = 1; j <= 9; j++) {
+            document.write('<br />');
+            for (var i = 2; i <= 5; i++) {
+                document.write(i, ' X ', j, ' = ', leadingSpace(i * j, 2), ' &nbsp; ');
+            }
+        }
+        
+        document.write('<br />') // 줄바꿈
+
+        for (var j = 1; j <= 9; j++) {
+            document.write('<br />');
+            for (var i = 6; i <= 9; i++) {
+                document.write(i, ' X ', j, ' = ', leadingSpace(i * j, 2), ' &nbsp; ');
+            }
+        }
+
+        document.write('</div>');
+
+        // 1자리 숫자 앞에 공백을 붙여 2자리로 맞추는 함수
+        // 가령, '5'를 ' 5'로
+        function leadingSpace(n, digits) {
+            var space = '';
+            n = n.toString();
+
+            if (n.length < digits) {
+                for (var i = 0; i < digits - n.length; i++) {
+                    space += '&nbsp;';
+                }
+            }
+            return space + n;
+        }
+    </script>
+    
+</body>
+</html>

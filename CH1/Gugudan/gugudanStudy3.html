@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div {
+        overflow-x: auto;
+    }
+    table {
+        width: 100%;
+        min-width: 500px;
+    }
+    td {
+        text-align : center;
+        background-color: #bbdefb;
+    }
+    </style>
+</head>
+
+<body>
+    <div>
+    <script>
+        var gugudan = function (n, m) {
+            document.write("<table><tr>");
+            for (var i = n; i <= m; i++) {
+                document.write("<td>" + i + "단</td>");
+            }
+            document.write("</tr>");
+
+            for (var j = 1; j <= 9; j++) {
+                document.write("<tr>");
+                for (var i = n; i <= m; i++) {
+                    document.write("<td>" + i + " * " + j + ' = ' + i * j + "</td>");
+                }
+                document.write("</tr>");
+            }
+            document.write("</table><br>")
+        }
+
+        var main = function() {
+            gugudan(2,4);
+            gugudan(5,7);
+            gugudan(8,10);
+        }
+        main();
+    </script>
+    </div>
+</body>
+
+</html>
