@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>객체로 구구단 구현</title>
+</head>
+
+<body>
+    <script>
+        var gugudan = {};
+        gugudan.result = [];
+        gugudan.math = [];
+        gugudan.prompt = function() {
+            var str = prompt("입력하세요!");
+            var array = str.split(",");
+            this.num1 = Number(array[0]);
+            this.num2 = Number(array[1]);
+        };
+        gugudan.Result = function () {
+            for (var i = 2; i <= this.num1; i++) {
+                for (var j = 1; j <= this.num2; j++) {
+                    var sum = i * j;
+                    this.result.push(sum);
+                }
+            }
+            return this.result;
+        };
+        gugudan.Form = function () {
+            for (var m = 2; m <= this.num1; m++) {
+                for (var n = 1; n <= this.num2; n++) {
+                    var form = m + " * " + n + " = ";
+                    this.math.push(form);
+                }
+            }
+            return this.math;
+        }
+        gugudan.Print = function () {
+            for (var o = 0; o < this.result.length; o++) {
+                document.write(this.math[o] + " " + this.result[o] + "<br>");
+            }
+        }
+        gugudan.main = function () {
+            this.prompt();
+            this.Result();
+            this.Form();
+            this.Print();
+        }
+        gugudan.main();
+    </script>
+</body>
+
+</html>
