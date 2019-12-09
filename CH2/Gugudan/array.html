@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>배열로 구구단 구현</title>
+</head>
+<body>
+    <script>
+        var gugudan = [];
+        var math = [];
+        for (var i = 2; i < 10; i++) {
+            for (var j = 1; j < 10; j++) {
+                var sum = i*j;
+                gugudan.push(sum);
+            }
+        }
+        
+        for (var m = 2; m < 10; m++) {
+            for (var n = 1; n < 10; n++) {
+                var form = m + " * " + n + " = ";
+                math.push(form);
+            }
+        }
+
+        for (var o = 0; o < gugudan.length; o++) {
+            document.write(math[o] + " " + gugudan[o] + "<br>");
+        }
+        
+
+
+    
+    </script>
+</body>
+</html>
